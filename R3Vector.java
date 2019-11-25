@@ -56,4 +56,27 @@ public class R3Vector {
     public static R3Vector randomMultiplication(R3Vector a, R3Vector b, R3Vector c) {
         return new R3Vector(c.x*scalarMultiplication(a,b),c.y*scalarMultiplication(a,b),c.z*scalarMultiplication(a,b));
     }
+
+    public void travel(double x, double y, double z) {
+        this.x += x;
+        this.y += y;
+        this.z += z;
+    }
+
+    public void rotateOX(double angle) {
+        double fakeY = y;
+        y = y*Math.cos(Math.toRadians(angle))+z*Math.sin(Math.toRadians(angle));
+        z = -(fakeY*Math.sin(Math.toRadians(angle))+z*Math.cos(Math.toRadians(angle)));
+    }
+    public void rotateOY(double angle) {
+        double fakeX = x;
+        x = x*Math.cos(Math.toRadians(angle))+z*Math.sin(Math.toRadians(angle));
+        z = -(fakeX*Math.sin(Math.toRadians(angle))+z*Math.cos(Math.toRadians(angle)));
+    }
+    public void rotateOZ(double angle) {
+        double fakeX = x;
+        x = x*Math.cos(Math.toRadians(angle))-y*Math.sin(Math.toRadians(angle));
+        y = -(fakeX*Math.sin(Math.toRadians(angle))+y*Math.cos(Math.toRadians(angle)));
+    }
+
 }
