@@ -113,8 +113,8 @@ public class Matrix2 {
         } else if (a.m == 2) {
             matrix[0][0] = a.matrix[1][1];
             matrix[1][1] = a.matrix[0][0];
-            matrix[0][1] = -a.matrix[1][0];
-            matrix[1][0] = -a.matrix[1][1];
+            matrix[0][1] = -a.matrix[0][1];
+            matrix[1][0] = -a.matrix[1][0];
         } else {
             for (int i = 0; i < a.m; i++) {
                 for (int j = 0; j < a.m; j++) {
